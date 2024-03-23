@@ -62,7 +62,7 @@ Ya deberian ser capaces de ver el dashboard con los recursos que cree, ya tienen
 
 ### Apagar contenedores
 ```bash
-./vendor/bin/sail up -d
+./vendor/bin/sail down
 ```
 
 # Cualquier duda no tengan pena de preguntarme.
