@@ -59,4 +59,9 @@ php artisan migrate:fresh --seed
 
 Ya deberian ser capaces de ver el dashboard con los recursos que cree, ya tienen agregadas las funcionalidades CRUD y conexion a la base de datos para que puedan ver como funcionan.
 
+### Apagar contenedores
+```bash
+./vendor/bin/sail down
+```
+
 ## Cualquier duda no tengan pena de preguntarme.
