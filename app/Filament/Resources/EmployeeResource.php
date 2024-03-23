@@ -21,13 +21,34 @@ class EmployeeResource extends Resource
 
     protected static ?string $navigationLabel = 'Empleados';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-user-circle';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('name')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('email')
+                    ->email()
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('phone')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('salary')
+                    ->required()
+                    ->maxLength(20),
+                Forms\Components\TextInput::make('department')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('designation')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('address')
+                    ->required()
+                    ->maxLength(255),
             ]);
     }
 
@@ -35,6 +56,20 @@ class EmployeeResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('name')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('email')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('phone')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('salary')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('department')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('designation')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('address')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
